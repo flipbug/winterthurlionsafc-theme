@@ -1,0 +1,21 @@
+title: Article
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.featured_image:
+              type: filepicker
+              label: Feature Image
+              folder: 'self@'
+              toggleable: true
+              preview_images: true
+              acccept:
+                - .png
+                - .jpg
+            header.intro:
+              type: editor
+              label: Intro

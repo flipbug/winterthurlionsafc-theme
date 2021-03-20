@@ -1,0 +1,27 @@
+name: Heilungsweg
+version: 1.0.0
+description: Template developed for heilungsweg.ch
+icon: empire
+author:
+  name: Daniel Milenkovic
+  email: flipbug360@gmail.com
+  url: https://flipbug.ch
+homepage: 
+keywords: 
+bugs: 
+docs: 
+license: MIT
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+      type: toggle
+      label: Dropdown in navbar
+      highlight: 1
+      default: 1
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool

@@ -1,0 +1,31 @@
+<div class="post">
+    <a href="{{ post.url }}" style="color: #4a4a4a;">
+        <article class="media">
+
+            {% if post.header.featured_image %}
+                <div class="media-left">
+                    <figure class="image">
+                        {{ post.media[post.header.featured_image].cropZoom(160, 120).html('',post.title|escape)}}
+                    </figure>
+                </div>
+            {% endif %}
+
+            <div class="media-content">
+                <div class="content">
+                    <h3 class="post-title">{{ post.title }}</h3>    
+                    <small class="post-date is-italic is-size-10 has-text-grey">
+                        Veröffentlicht am {{ post.header.publish_date|date("d.m.Y") }}
+                    </small>
+
+                    {% if post.header.intro %}
+                        {{ post.header.intro|markdown }}
+                    {% else %}
+                        {{ post.summary(120) }}
+                    {% endif %}
+                </div>
+            </div>
+        </article>
+    </a>
+</div>
+
+<hr>

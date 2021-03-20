@@ -1,0 +1,149 @@
+@charset "utf-8";
+
+// Customization
+
+// You can easily customize Bulma with your own variables.
+// Just uncomment the following block to see the result.
+
+
+// 1. Import the initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+// Update the sans-serif font family
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
+
+$family-sans-serif:  "IBM Plex Sans", "Nunito", "Helvetica", "Arial", sans-serif;
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+
+$primary: #007986;
+$primary-light: hsl(186, 100%, 42%);
+$secondary: #cde7d0;
+$secondary-light: #f6fbf6;
+
+$hero-color: #3e3e3e;
+$light-grey: #e4e4e4;
+
+$box-radius: 0;
+$background: #fffffe;
+$scheme-main: $background;
+$text: #2e2e2e;
+
+$body-background-color: $background;
+$box-background-color: $background;
+
+$link: $primary;
+$link-hover: $primary-light;
+
+$navbar-height: 6rem;
+
+// $body-font-size: 1.15em;
+
+// 4. Import the rest of Bulma
+
+@import "../node_modules/bulma/bulma";
+
+// Nav
+
+.hero.is-primary  {
+    color: $hero-color !important;
+    padding-top: 2rem;
+
+    .title, .subtitle {
+        color: $hero-color !important;
+
+    }
+}
+
+.navbar-item {
+    font-size: 1.2em;
+}
+
+.logo {
+    margin-right: 10px;
+}
+// Homepage
+
+.icon-background{
+    opacity: 0.05;
+    padding: 20px;
+}
+
+.home .hero {
+    background: linear-gradient(141deg, #c9ded5 0%, #8fc2c6 71%, #9ec8bc 100%) !important;
+
+    @include desktop {
+        background: url("/user/themes/heilungsweg/images/dmytro-tolokonov_2.jpg") no-repeat top center !important;
+    }    
+}
+
+
+.hero-body {
+    padding-bottom:4rem !important;
+
+    @include touch {
+        padding-top: none !important;
+    }
+}
+
+.make-appointment {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.address {
+    background: #f3f3f3;
+    padding: 2rem;
+}
+
+hr {
+    background: #f3f3f3;
+}
+
+.content h1 {
+    margin-bottom: 1.25em;
+}
+
+.nav-spacer {
+    height: 15px;
+    background: url("/user/themes/heilungsweg/images/dmytro-tolokonov_2.jpg") center !important;
+    backdrop-filter: blur(0.8);
+}
+
+section.introduction {
+    padding-top: 1rem;
+    
+    .column {
+        background-color: rgba($color: $background, $alpha: 0.6);
+        padding: 40px 30px 30px 40px;
+        margin-right: 20px;
+
+        &:last-child {
+            border-right: none;
+        }
+
+        .content {
+            font-size: 1.1em;
+        }
+
+        @include touch {
+            margin-top: 20px;
+        }
+    
+    }
+}
+
+.post {
+    padding: 1.25rem;
+}
+
+h3.post-title {
+    margin-bottom: 5px;
+}
+
+.post-date {
+    display: block;
+    margin-bottom: 10px;
+}

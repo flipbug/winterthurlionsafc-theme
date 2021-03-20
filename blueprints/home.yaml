@@ -1,0 +1,74 @@
+title: Home
+'@extends':
+  type: default
+  context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs 
+      fields:
+
+        content: 
+          fields:
+            header.custom.address:
+              type: markdown
+              label: Address
+
+        home:
+          type: tab
+          title: Special Content
+          fields:
+
+            header.custom.hometitle:
+              type: text
+              label: Title
+
+            header.custom.homesubtitle:
+              type: textarea
+              label: Subitle
+
+            header.custom.blog:
+              type: markdown
+              label: Blog Intro
+
+            boxone:
+              type: section
+              title: Box One
+              underline: true
+              fields:
+                header.custom.boxone.content:
+                  type: markdown
+                  label: Content
+                header.custom.boxone.page:
+                  type: pages
+                  size: medium
+                  label: Page Link
+
+            boxtwo:
+              type: section
+              title: Box Two
+              underline: true
+              fields:
+                header.custom.boxtwo.content:
+                  type: markdown
+                  label: Content
+                header.custom.boxtwo.page:
+                  type: pages
+                  size: medium
+                  label: Page Link
+
+            boxthree:
+              type: section
+              title: Box Three
+              underline: true
+              fields:
+                header.custom.boxthree.content:
+                  type: markdown
+                  label: Content
+                header.custom.boxthree.page:
+                  type: pages
+                  size: medium
+                  label: Page Link
+
+

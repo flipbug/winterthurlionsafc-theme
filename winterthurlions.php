@@ -3,7 +3,7 @@ namespace Grav\Theme;
 
 use Grav\Common\Theme;
 
-class Heilungsweg extends Theme
+class Winterthurlions extends Theme
 {
 
     public function onThemeInitialized()

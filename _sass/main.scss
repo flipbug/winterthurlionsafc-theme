@@ -18,12 +18,13 @@ $family-sans-serif:  "IBM Plex Sans", "Nunito", "Helvetica", "Arial", sans-serif
 // 3. Set the derived variables
 // Use the new pink as the primary color
 
-$primary: #007986;
+$primary: #05234c;
 $primary-light: hsl(186, 100%, 42%);
-$secondary: #cde7d0;
+
+$secondary: #d51b3f;
 $secondary-light: #f6fbf6;
 
-$hero-color: #3e3e3e;
+$hero-color: #fff;
 $light-grey: #e4e4e4;
 
 $box-radius: 0;
@@ -39,17 +40,24 @@ $link-hover: $primary-light;
 
 $navbar-height: 6rem;
 
+$navbar-background-color: $primary;
+$navbar-tab-hover-border-bottom-color: $secondary;
+$navbar-item-color: $white;
+$navbar-item-hover-color: $secondary;
+$navbar-item-hover-background-color: transparent;
+$navbar-item-active-color: $white;
+$navbar-item-active-background-color: transparent;
 // $body-font-size: 1.15em;
 
 // 4. Import the rest of Bulma
 
 @import "../node_modules/bulma/bulma";
 
-// Nav
 
 .hero.is-primary  {
     color: $hero-color !important;
     padding-top: 2rem;
+    background: $primary !important;
 
     .title, .subtitle {
         color: $hero-color !important;
@@ -57,14 +65,32 @@ $navbar-height: 6rem;
     }
 }
 
+.home .navbar {
+    min-height: 8rem;
+
+    .navbar-item {
+        img {
+            max-height: 8rem;
+        }
+    }
+}
+
 .navbar-item {
     font-size: 1.2em;
+    font-weight: bold;
+
+    &.is-active {
+        border-bottom: 3px solid $secondary;
+    }
+
+    img {
+        max-height: 5rem;
+    }
 }
 
 .logo {
     margin-right: 10px;
 }
-// Homepage
 
 .icon-background{
     opacity: 0.05;
@@ -72,17 +98,26 @@ $navbar-height: 6rem;
 }
 
 .home .hero {
-    background: linear-gradient(141deg, #c9ded5 0%, #8fc2c6 71%, #9ec8bc 100%) !important;
-
-    @include desktop {
-        background: url("/user/themes/heilungsweg/images/dmytro-tolokonov_2.jpg") no-repeat top center !important;
-    }    
+    background: $primary;
 }
 
+.sidebar {
+
+    border-left: solid 1px lightgray;
+    padding-left: 50px;
+
+    h2 {
+        color: $secondary;
+        //border-bottom: solid $secondary 5px;
+        padding-bottom: 5px;
+    }
+
+    .sidebar-content {
+        margin-bottom:50px;
+    }
+}
 
 .hero-body {
-    padding-bottom:4rem !important;
-
     @include touch {
         padding-top: none !important;
     }
@@ -98,6 +133,18 @@ $navbar-height: 6rem;
     padding: 2rem;
 }
 
+.main-content{
+    .introduction{
+        padding-bottom:50px;
+        border-bottom: solid lightgray 1px;
+        margin-bottom: 50px;
+    }
+
+    h2 {
+        margin-bottom: 30px;
+    }
+}
+
 hr {
     background: #f3f3f3;
 }
@@ -108,7 +155,6 @@ hr {
 
 .nav-spacer {
     height: 15px;
-    background: url("/user/themes/heilungsweg/images/dmytro-tolokonov_2.jpg") center !important;
     backdrop-filter: blur(0.8);
 }
 
@@ -133,10 +179,6 @@ section.introduction {
         }
     
     }
-}
-
-.post {
-    padding: 1.25rem;
 }
 
 h3.post-title {

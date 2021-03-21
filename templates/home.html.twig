@@ -3,88 +3,35 @@
 {% block content %}
 
     <section class="hero is-medium is-primary is-bold">
-        <div class="hero-head">
 
-        </div>
-        <div class="hero-body">
-            <section class="section">
+        <section class="section" style="display:none;">
 
-                <div class="container">
-                    <div class="columns">
-                        <div class="column is-8-desktop">
-                            <h1 class="title is-2 is-spaced">{{ page.header.custom.hometitle }}</h1>
-                            <h2 class="subtitle is-4">{{ page.header.custom.homesubtitle }}</h2>
-                        </div>
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-4-desktop">
+                        {% if page.header.featured_image_one %}
+                            <figure class="image " style="margin-left: 0; margin-right: 0;">
+                                {{ page.media[page.header.featured_image_one].html('',page.title|escape)}}
+                            </figure>
+                        {% endif %}
                     </div>
-                </div>
-            </section>
-
-            <section class="section introduction">
-                <div class="container">
-                    <div class="columns is-desktop">
-
                         <div class="column is-4-desktop">
-                            <div class="content">
-                                {{ page.header.custom.boxone.content|markdown }}
-                                <a class="" href="{{ page.header.custom.boxone.page }}"><button
-                                        class="button">Mehr erfahren →</button></a>
-                            </div>
-                        </div>
-
+                            {% if page.header.featured_image_two %}
+                            <figure class="image " style="margin-left: 0; margin-right: 0;">
+                                {{ page.media[page.header.featured_image_two].html('',page.title|escape)}}
+                            </figure>
+                        {% endif %}
+                    </div>
                         <div class="column is-4-desktop">
-                            <div class="content">
-                                {{ page.header.custom.boxtwo.content|markdown }}
-                                <a class="" href="{{ page.header.custom.boxtwo.page }}"><button
-                                        class="button">Mehr erfahren →</button></a>
-                            </div>
-                        </div>
-
-                        <div class="column is-4-desktop">
-                            <div class="content">
-                                {{ page.header.custom.boxthree.content|markdown }}
-                                <a class="" href="{{ page.header.custom.boxthree.page }}"><button
-                                        class="button">Mehr erfahren →</button></a>
-                            </div>
-                        </div>
+                            {% if page.header.featured_image_three %}
+                            <figure class="image " style="margin-left: 0; margin-right: 0;">
+                                {{ page.media[page.header.featured_image_three].html('',page.title|escape)}}
+                            </figure>
+                        {% endif %}
                     </div>
                 </div>
-            </section>
-
-        </div>
-    </section>
-
-    <section class="section">
-
-        <div class="container">
-
-            <div class="columns">
-                <div class="column  is-8-desktop">
-                    <div class="content">
-
-                        {{ page.content }}  
-
-                    </div>
-                </div>
-
-                <div class="column is-offset-1 is-3-desktop address">
-                    <div class="content">
-                        <h2>Adresse</h2>
-                            {{ page.header.custom.address|markdown }}
-                    </div>
-                </div>
-
-
-
             </div>
-        </div>
-
-    </section>
-
-        <section class="section">
-
-        <div class="container">
-            <hr>
-        </div>
+        </section>
     </section>
 
     <section class="section">
@@ -92,28 +39,55 @@
         <div class="container">
 
             <div class="columns">
-
-                <div class="column  is-4-desktop">
-                    <div class="content">
-                        {{ page.header.custom.blog|markdown }}
-                        <a class="" href="/blog"><button class="button">Alle Artikel →</button></a>
+                <div class="column  is-8-desktop main-content content">
+                    <div class="introduction">
+                        {{ page.content }}  
+                        <figure class="image " style="margin-left: 0; margin-right: 0;">
+                            {{ page.media[page.header.featured_image_one].html('',page.title|escape)}}
+                        </figure>
                     </div>
-                </div>
 
-                <div class="column  is-8-desktop">
-                    <div class="content">
+                    <div class="news">
+                    <h2>News</h2>
 
-                    {% for post in page.find('/blog').children.order('publish_date', 'desc').slice(0, 3) %}
+                    {% for post in page.find('/news').children.order('publish_date', 'desc').slice(0, 3) %}
                         {% include 'partials/post.html.twig' %}
                     {% endfor %}
-  
+                    </div>
+                
+                </div>
 
+                <div class="column is-offset-1 is-3-desktop sidebar content">
+                    <div class="sidebar-content">
+                        <h2>{{ page.header.custom.datestitle }}</h2>
+
+                        <div class="datescontent">
+                            {{ page.header.custom.datescontent|markdown }}
+                        </div>
+                    </div>
+
+                    <div class="sidebar-content">
+                        <h2>Join Us</h2>
+
+                        <div class="datescontent">
+                            <p>Become a part of our team.</p>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-content">
+                        <h2>Newsletter</h2>
+
+                        <div class="datescontent">
+                            <p><input type="text" placeholder="email"></input></p>
+                        </div>
                     </div>
                 </div>
+
+
+
             </div>
         </div>
 
     </section>
-
 
 {% endblock %}

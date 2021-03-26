@@ -6968,7 +6968,9 @@ label.panel-block {
 .home .navbar {
   min-height: 8rem; }
   .home .navbar .navbar-item img {
-    max-height: 8rem; }
+    max-height: 9rem;
+    padding-bottom: 20px;
+    padding-top: 10px; }
 
 .navbar-item {
   font-size: 1.2em;

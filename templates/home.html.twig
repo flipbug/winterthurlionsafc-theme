@@ -2,8 +2,6 @@
 
 {% block content %}
 
-	<section class="hero is-medium is-primary is-bold"></section>
-
 	<section class="section title-section">
 
 		<div class="container">
@@ -37,7 +35,7 @@
 						<h2>{{ page.header.custom.datestitle }}</h2>
 
 						<div class="datescontent">
-							{% for event in page.find('/events').children.order('header.event_date', 'asc') %}
+							{% for event in page.find('/events').children.order('header.event_date', 'asc') if date(event.header.event_date) > date() %}
 								{% include 'partials/event.html.twig' %}
 							{% endfor %}
 						</div>

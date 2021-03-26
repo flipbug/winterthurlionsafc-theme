@@ -30,7 +30,6 @@
 							{% include 'partials/post.html.twig' %}
 						{% endfor %}
 					</div>
-
 				</div>
 
 				<div class="column is-offset-1 is-3-desktop sidebar content">
@@ -38,7 +37,7 @@
 						<h2>{{ page.header.custom.datestitle }}</h2>
 
 						<div class="datescontent">
-							{% for event in page.find('/events').children.order('event_date', 'desc') %}
+							{% for event in page.find('/events').children.order('header.event_date', 'asc') %}
 								{% include 'partials/event.html.twig' %}
 							{% endfor %}
 						</div>
@@ -58,5 +57,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</div></section>{% endblock %}
+	</section>
+{% endblock %}

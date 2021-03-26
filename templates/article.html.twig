@@ -2,53 +2,54 @@
 
 {% block content %}
 
-<div class="nav-spacer"></div>
+	<div class="nav-spacer"></div>
 
-<section class="section">
-    <div class="container">
-        <div class="columns is-centered">
-            <div class="column is-12">
+	<section class="section">
+		<div class="container">
+			<div class="columns is-centered">
+				<div class="column is-12">
 
-            <div class="content">
-                <h1>
-                    {{ page.title }}
-                </h1>
+					<div class="content">
+						<h1>
+							{{ page.title }}
+						</h1>
 
-                {% if page.header.intro %}
-                    <div class="is-size-5">
-                        {{ page.header.intro|markdown }}
-                    </div>
-                {% endif %}
+						{% if page.header.intro %}
+							<div class="is-size-5">
+								{{ page.header.intro|markdown }}
+							</div>
+						{% endif %}
 
-                {% if page.header.featured_image %}
-                    <figure class="image " style="margin-left: 0; margin-right: 0;">
-                        {{ page.media[page.header.featured_image].html('',page.title|escape)}}
-                    </figure>
-                {% endif %}
+						{% if page.header.featured_image %}
+							<figure class="image " style="margin-left: 0; margin-right: 0;">
+								{{ page.media[page.header.featured_image].html('',page.title|escape)}}
+							</figure>
+						{% endif %}
 
-                <hr>
 
-                {{ page.content }}
-            </div>
+						<small class="is-italic is-size-10 has-text-grey">
+							Publish date: 
+							{{ page.header.publish_date|date("d.m.Y") }}
+						</small>
 
-            {% if page.header.taxonomy.tag %}
-                <div class="tags">
-                    {% for tag in page.header.taxonomy.tag %}
-                        <span class="tag">
-                            {{ tag }}
-                        </span>
-                    {% endfor %}
-                </div>
-            {% endif %}
+						<hr>
 
-            <small class="is-italic is-size-10 has-text-grey">
-                Veröffentlicht am {{ page.header.publish_date|date("d.m.Y") }}
-            </small>
+						{{ page.content }}
+					</div>
 
-        </div>
+					{% if page.header.taxonomy.tag %}
+						<div class="tags">
+							{% for tag in page.header.taxonomy.tag %}
+								<span class="tag">
+									{{ tag }}
+								</span>
+							{% endfor %}
+						</div>
+					{% endif %}
 
-            </div>
-        </div>
-    </div>
-</section>
-{% endblock %}
+				</div>
+
+			</div>
+		</div>
+	</div>
+</section>{% endblock %}

@@ -123,16 +123,6 @@ $navbar-item-active-background-color: transparent;
     }
 }
 
-.make-appointment {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.address {
-    background: #f3f3f3;
-    padding: 2rem;
-}
-
 .title-section {
     padding-bottom: 0px;
 }
@@ -171,29 +161,6 @@ hr {
 .nav-spacer {
     height: 15px;
     backdrop-filter: blur(0.8);
-}
-
-section.introduction {
-    padding-top: 1rem;
-    
-    .column {
-        background-color: rgba($color: $background, $alpha: 0.6);
-        padding: 40px 30px 30px 40px;
-        margin-right: 20px;
-
-        &:last-child {
-            border-right: none;
-        }
-
-        .content {
-            font-size: 1.1em;
-        }
-
-        @include touch {
-            margin-top: 20px;
-        }
-    
-    }
 }
 
 h3.post-title {
@@ -240,4 +207,8 @@ h3.post-title {
     &:hover{
         opacity: 0.5;
     }
+}
+
+iframe {
+    min-height: 415px;
 }

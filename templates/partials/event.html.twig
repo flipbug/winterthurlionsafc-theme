@@ -1,12 +1,12 @@
 
 {% if date(event.header.event_date) > date() %}
 <div class="event">
-    <span class="event-date">{{ event.header.event_date|date("d.m.Y") }}</span>
+    <span class="event-date">{{ event.header.event_date|date("d.m.Y - H:i") }}</span>
     <span class="event-title">{{ event.title }}</span>    
     <span class="event-location">@{{ event.header.event_location }}</span>
 
     {% if event.header.event_url %}
-        <span class="event-url"><a href="{{ event.header.event_url }}" target="_blank">Link</a></span>
+        <span class="event-url"><a href="{{ event.header.event_url }}" target="_blank">More Information</a></span>
     {% endif %}
 
 </div>

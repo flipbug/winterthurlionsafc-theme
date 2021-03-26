@@ -12,43 +12,39 @@ form:
         content: 
           fields:
 
-            header.featured_image_one:
-              type: filepicker
-              label: Feature Image One
-              folder: 'self@'
-              toggleable: true
-              preview_images: true
-              acccept:
-                - .png
-                - .jpg
+            header.custom.title:
+              type: text
+              label: Main Title
 
-            header.featured_image_two:
-              type: filepicker
-              label: Feature Image Two
-              folder: 'self@'
-              toggleable: true
-              preview_images: true
-              acccept:
-                - .png
-                - .jpg
-
-            header.featured_image_three:
-              type: filepicker
-              label: Feature Image Three
-              folder: 'self@'
-              toggleable: true
-              preview_images: true
-              acccept:
-                - .png
-                - .jpg
+            header.custom.subtext:
+              type: text
+              label: Subtext
 
             header.custom.datestitle:
               type: text
-              label: Upcoming Dates Title
+              label: Events Title
 
-            header.custom.datescontent:
+            header.custom.boxone_title:
+              type: text
+              label: Box One Title
+
+            header.custom.boxone_content:
               type: markdown
-              label: Upcoming Dates Content
+              label: Box One Content
+
+            header.custom.boxtwo_title:
+              type: text
+              label: Box Two Title
+
+            header.custom.boxtwo_content:
+              type: markdown
+              label: Box Two Content
+
+
+
+
+
+
 
 
 

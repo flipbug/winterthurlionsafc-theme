@@ -1,18 +1,29 @@
 <footer class="footer">
-    <div class="container">
-        <div class="columns is-centered">
-            <div class="column is-8">
-                <div class="content">
-                    {{ site.footer|markdown}}
-                </div>
-            </div>
+	<div class="container">
+		<div class="columns content">
 
-            <div class="column is-4">
-                <div class="content">
-                    <a href="/de/impressum">Impressum</a>
-                </div>
-            </div>
+			<div class="column is-2-desktop">
+				<a href="https://aflswitzerland.ch/" target="_blank">
+					<img src="{{ url('theme://images/afl_switzerland.png') }}" class="afl-switzerland"/>
+				</a>
+			</div>
 
-        </div>
-    </div>
+			<div class="column is-8-desktop">
+				{{ site.footer|markdown}}
+			</div>
+
+			<div class="column is-2-desktop">
+				<div class="social-icon">
+					<a href="https://www.instagram.com/winterthurlionsafc/" target="_blank">
+						<img src="{{ url('theme://images/instagram.png') }}" class="instagram"/>
+					</a>
+				</div>
+				<div class="social-icon">
+					<a href="https://www.facebook.com/winterthurlionsafc" target="_blank">
+						<img src="{{ url('theme://images/facebook.png') }}" class="facebook"/>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </footer>

@@ -31,12 +31,13 @@ $box-radius: 0;
 $background: #fffffe;
 $scheme-main: $background;
 $text: #2e2e2e;
+$footer-text: #6b6b6b;
 
 $body-background-color: $background;
 $box-background-color: $background;
 
 $link: $primary;
-$link-hover: $primary-light;
+$link-hover: $secondary;
 
 $navbar-height: 6rem;
 
@@ -80,7 +81,7 @@ $navbar-item-active-background-color: transparent;
     font-weight: bold;
 
     &.is-active {
-        border-bottom: 3px solid $secondary;
+        border-bottom: 5px solid $secondary;
     }
 
     img {
@@ -102,10 +103,6 @@ $navbar-item-active-background-color: transparent;
 }
 
 .sidebar {
-
-    border-left: solid 1px lightgray;
-    padding-left: 50px;
-
     h2 {
         color: $secondary;
         //border-bottom: solid $secondary 5px;
@@ -114,6 +111,9 @@ $navbar-item-active-background-color: transparent;
 
     .sidebar-content {
         margin-bottom:50px;
+        border-top: 5px $secondary solid;
+        padding-top: 20px;
+        // background: #fafafa;
     }
 }
 
@@ -131,6 +131,21 @@ $navbar-item-active-background-color: transparent;
 .address {
     background: #f3f3f3;
     padding: 2rem;
+}
+
+.title-section {
+    padding-bottom: 0px;
+}
+
+.main-title{
+    font-size: 2rem;
+    font-weight: bold;
+
+    .subtext {
+        display: block;
+        font-weight: 100;
+        font-size: 1.5rem;
+    }
 }
 
 .main-content{
@@ -188,4 +203,41 @@ h3.post-title {
 .post-date {
     display: block;
     margin-bottom: 10px;
+}
+
+.event {
+    font-size: 1.1rem;
+
+    span {
+        display: block;
+    }
+    
+    .event-date{
+        font-weight: bold;;
+    }
+
+    .event-location {
+        font-size: 1rem;
+    }
+
+}
+.footer {
+    color: $footer-text;
+    h2 {
+        color: $footer-text;
+        font-size: 1.1rem;
+    }
+}
+
+.social-icon {
+    display: block;
+    float: left;
+
+    img {
+        max-height: 50px;
+    }
+
+    &:hover{
+        opacity: 0.5;
+    }
 }

@@ -1,0 +1,21 @@
+title: Event
+extends@:
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.event_date:
+              type: datetime
+              label: Event Date
+              toggleable: false
+            header.event_location:
+              type: text
+              label: Event Location
+            header.event_url:
+              type: text
+              label: Event Url

@@ -36,8 +36,8 @@ $footer-text: #6b6b6b;
 $body-background-color: $background;
 $box-background-color: $background;
 
-$link: $primary;
-$link-hover: $secondary;
+$link: $secondary;
+$link-hover: $primary;
 
 $navbar-height: 6rem;
 
@@ -48,6 +48,22 @@ $navbar-item-hover-color: $secondary;
 $navbar-item-hover-background-color: transparent;
 $navbar-item-active-color: $white;
 $navbar-item-active-background-color: transparent;
+
+
+$navbar-dropdown-background-color: $primary;
+$navbar-dropdown-border-top: none;
+// $navbar-dropdown-offset: -4px !default
+// $navbar-dropdown-arrow: $link !default
+$navbar-dropdown-radius: $radius-small;
+// $navbar-dropdown-z: 20 !default
+
+//$navbar-dropdown-boxed-radius: $radius-large !default
+//$navbar-dropdown-boxed-shadow: 0 8px 8px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1) !default
+
+$navbar-dropdown-item-hover-color: $secondary;
+$navbar-dropdown-item-hover-background-color: $primary;
+$navbar-dropdown-item-active-color: $secondary;
+$navbar-dropdown-item-active-background-color: $primary;
 // $body-font-size: 1.15em;
 
 // 4. Import the rest of Bulma
@@ -76,12 +92,19 @@ $navbar-item-active-background-color: transparent;
     }
 }
 
+
 .navbar-item {
     font-size: 1.2em;
     font-weight: bold;
 
     &.is-active {
         border-bottom: 5px solid $secondary;
+    }
+
+    .navbar-dropdown{
+        .is-active {
+            border-bottom: none;
+        }
     }
 
     img {

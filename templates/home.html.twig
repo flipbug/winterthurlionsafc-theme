@@ -26,7 +26,7 @@
 					<div class="news">
 						<h2>Latest News</h2>
 
-						{% for post in page.find('/news').children.order('publish_date', 'desc').slice(0, 3) %}
+						{% for post in page.find('/news').children.order('date', 'desc').slice(0, 3) %}
 							{% include 'partials/post.html.twig' %}
 						{% endfor %}
 					</div>

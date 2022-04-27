@@ -2,9 +2,34 @@
 
 {% block content %}
 
-	{% for p in page.collection %}
-		<h2>{{ p.title|e }}</h2>
-		{{ p.summary|raw }}
-	{% endfor %}
+<div class="nav-spacer"></div>
 
-{% endblock %}
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-12">
+
+                <div class="content">
+                    <h1>{{ page.title }}</h1>
+                    {{ page.content }}
+                </div>
+                <hr>
+ 
+                <div class="content">
+                    <h2>Upcomming</h1>
+                        <hr>
+                        {% for event in page.collection('upcoming') %}
+                        {% include 'partials/event.html.twig' %}
+                        {% endfor %}
+
+                    <h2>Past</h1>
+                        <hr>
+                        {% for event in page.collection('past') %}
+                        {% include 'partials/event.html.twig' %}
+                        {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

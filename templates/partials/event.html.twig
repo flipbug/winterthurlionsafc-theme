@@ -1,12 +1,20 @@
-<div class="event">
-    <span class="event-date">{{ event.header.event_date|date("d.m.Y - H:i") }}</span>
-    <span class="event-title">{{ event.title }}</span>    
-    <span class="event-location">@{{ event.header.event_location }}</span>
+<div class="post">
+    <article class="media">
+        <div class="media-content">
+            <div class="content">
 
-    {% if event.header.event_url %}
-        <span class="event-url"><a href="{{ event.header.event_url }}" target="_blank">More Information</a></span>
-    {% endif %}
+                <a href="{{ event.url }}" style="color: #4a4a4a;">
+                    <h4 class="post-title">{{ event.title }}</h3>    
+                    <small class="post-date is-italic is-size-10 has-text-grey">
+                        {{ event.header.event_date|date("d.m.Y - H:i") }} @ {{ event.header.event_location }}
+                    </small>
 
+                </a> 
+
+                {% if event.header.event_url %}
+                <span class="event-url"><a href="{{ event.header.event_url }}" target="_blank">More Information</a></span>
+                {% endif %}
+            </div>
+    </article>
 </div>
-
-<hr/>
+<hr />

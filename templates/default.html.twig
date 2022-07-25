@@ -2,24 +2,27 @@
 
 {% block content %}
 
-<div class="nav-spacer"></div>
+	<div class="nav-spacer"></div>
 
-<section class="section">
-    <div class="container">
-        <div class="columns is-centered">
-            <div class="column is-12">
+	<section class="section">
+		<div class="container">
+			<div class="columns is-centered">
+				<div class="column is-12 content">
 
-                <div class="content">
-                    <h1>
-                        {{ page.title }}
-                    </h1>
-                    
-                    {{ page.content }}
-                </div>
+					{% block pagetitle %}
+						<h1>
+							{{ page.title }}
+						</h1>
+					{% endblock %}
 
-            </div>
-        </div>
-    </div>
-</section>
+
+					{% block innercontent %}
+						{{ page.content }}
+					{% endblock %}
+
+				</div>
+			</div>
+		</div>
+	</section>
 
 {% endblock %}
